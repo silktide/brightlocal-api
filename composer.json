@@ -15,5 +15,11 @@
             "name": "Andrew Waite",
             "email": "andrewwaite@silktide.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Silktide\\BrightLocalApi\\": "src",
+            "Silktide\\BrightLocalApi\\Test\\": "test"
+        }
+    }
 }
