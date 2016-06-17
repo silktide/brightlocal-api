@@ -1,0 +1,19 @@
+{
+    "name": "silktide/brightlocal-api",
+    "description": "BrightLocal API wrapper.",
+    "type": "library",
+    "license": "GPL-3.0+",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
+    "authors": [
+        {
+            "name": "Andrew Waite",
+            "email": "andrewwaite@silktide.com"
+        }
+    ]
+}
