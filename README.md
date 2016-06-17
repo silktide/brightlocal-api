@@ -23,7 +23,7 @@ $client = $clientFactory->createClient([YOUR API KEY], [YOUR API SECRET]);
 
 *If you don't know what this is, ignore this part.*
 
-If you're using [syringe](https://github.com/silktide/syringe) , a config is included for convenience.  If you want to wire it up manually, take a look inside the ClientFactory class to see how the Client and its dependencies are created.
+If you're using [syringe](https://github.com/silktide/syringe) , a config is included for convenience.  If you want to wire it up in your own DI container, take a look inside the ClientFactory class to see how the Client and its dependencies are created.
 
 
 ## Batches
