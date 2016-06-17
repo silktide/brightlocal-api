@@ -2,7 +2,7 @@
 
 namespace Silktide\BrightLocalApi;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as Guzzle;
 use Exception;
 
 /**
@@ -54,17 +54,17 @@ class Api
     );
 
     /**
-     * @var Client
+     * @var Guzzle
      */
     protected $guzzle;
 
     /**
-     * @param Client $guzzle
+     * @param Guzzle $guzzle
      * @param string $apiKey
      * @param string $apiSecret
      * @param string $endpoint
      */
-    public function __construct(Client $guzzle, $apiKey, $apiSecret, $endpoint = null)
+    public function __construct(Guzzle $guzzle, $apiKey, $apiSecret, $endpoint = null)
     {
         $this->guzzle = $guzzle;
         $this->endpoint = isset($endpoint) ? $endpoint : self::ENDPOINT;
