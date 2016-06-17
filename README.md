@@ -58,9 +58,12 @@ $client->fetchProfileDetailsByBusinessData($batch, [
     'country' => 'GBR',
     'city' => 'Derby',
     'postcode' => 'DE248HR',
-    'local-directory' => 'google' // One of BL's directories - see http://apidocs.brightlocal.com/#appendix
+    'local-directory' => 'google'
 ]);
 ~~~~
+
+The directory should be one listed by [BrightLocal](http://apidocs.brightlocal.com/#appendix).
+Country should be [3-letter ISO](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
 
 ## General
 
