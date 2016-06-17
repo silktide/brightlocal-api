@@ -1,0 +1,25 @@
+parameters:
+  api_key: ""
+  api_secret: ""
+
+services:
+  client:
+    class: Silktide\BrightLocalApi\Client
+    arguments:
+      - "@api"
+      - "@batch.factory"
+
+  batch.factory:
+    class: Silktide\BrightLocalApi\BatchFactory
+    arguments:
+      - "@api"
+
+  api:
+    class: Silktide\BrightLocalApi\Api
+    arguments:
+      - "@guzzle.client"
+      - "%api_key%"
+      - "%api_secret%"
+
+  guzzle.client:
+    class: GuzzleHttp\Client

@@ -21,5 +21,12 @@
             "Silktide\\BrightLocalApi\\": "src",
             "Silktide\\BrightLocalApi\\Test\\": "test"
         }
+    },
+    "extra": {
+        "downsider-puzzle-di": {
+            "silktide/syringe": {
+                "path": "config/syringe.yml"
+            }
+        }
     }
 }

@@ -10,11 +10,6 @@ Methods implemented:
 
 ## Create a client
 
-### Using dependency injection
-*If you're not sure what this is, skip to creating a client using the client factory.*
-
-
-
 ### Using the client factory
 
 This library comes with a convenient factory for those not using DI.  Just use the following to create an API client:
