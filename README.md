@@ -62,7 +62,7 @@ $client->fetchProfileDetailsByBusinessData($batch, [
 ]);
 ~~~~
 
-The directory should be one listed by [BrightLocal](http://apidocs.brightlocal.com/#appendix).
+The directory should be one listed in [BrightLocal's appendices](http://apidocs.brightlocal.com/#appendix).
 Country should be [3-letter ISO](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
 
 ## General
