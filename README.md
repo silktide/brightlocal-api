@@ -1,6 +1,10 @@
 # brightlocal-api
 Wrapper for BrightLocal API.  Work in progress.
 
+[![Build Status](https://travis-ci.org/silktide/brightlocal-api.svg?branch=master)](https://travis-ci.org/silktide/brightlocal-api)
+[![Code Climate](https://codeclimate.com/github/silktide/brightlocal-api/badges/gpa.svg)](https://codeclimate.com/github/silktide/brightlocal-api)
+[![Test Coverage](https://codeclimate.com/github/silktide/brightlocal-api/badges/coverage.svg)](https://codeclimate.com/github/silktide/brightlocal-api/coverage)
+
 Methods implemented:
 
 * Batch create
