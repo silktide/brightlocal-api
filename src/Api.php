@@ -157,7 +157,7 @@ class Api
     /**
      * @return int
      */
-    public function get_last_http_code()
+    public function getLastHttpCode()
     {
         return $this->lastHttpCode;
     }
