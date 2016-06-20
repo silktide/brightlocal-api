@@ -66,6 +66,22 @@ $client->fetchProfileDetailsByBusinessData($batch, [
 The directory should be one listed in [BrightLocal's appendices](http://apidocs.brightlocal.com/#appendix).
 Country should be [3-letter ISO](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
 
+## Directory config helper
+To help with talking to the BrightLocal API, a helper is included which can help with your integration.
+
+### Find out which directories can be used
+This function returns an array of directory IDs which BrightLocal supports in a given country.
+~~~~
+$helper = Silktide\BrightLocalApi\Data\DirectoryConfigHelper(new Silktide\BrightLocalApi\Data\DataLoader());
+$helper->getDirectoriesForCountry('GBR');
+~~~~
+
+### Get the "friendly name" of a directory
+BrightLocal's API contains a reference to all the directories they support, but all the names are lowercase with punctuation removed (e.g. 2findlocal, canadaspace).  This function returns a "friendly" name for your given directory.
+~~~~
+$helper = Silktide\BrightLocalApi\Data\DirectoryConfigHelper(new Silktide\BrightLocalApi\Data\DataLoader());
+$helper->getLabelForDirectory('192'); // returns '192.com'
+~~~~
 
 ## Complete examples
 
