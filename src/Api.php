@@ -75,7 +75,7 @@ class Api
     /**
      * @return array
      */
-    public function get_sig_and_expires()
+    public function getSigAndExpires()
     {
         $expires = (int) gmdate('U') + self::MAX_EXPIRY;
         $sig = base64_encode(hash_hmac('sha1', $this->apiKey . $expires, $this->apiSecret, true));
@@ -97,7 +97,7 @@ class Api
         $method = str_replace('/seo-tools/api', '', $method);
         // some methods only require api key but there's no harm in also sending
         // sig and expires to those methods
-        list($sig, $expires) = $this->get_sig_and_expires();
+        list($sig, $expires) = $this->getSigAndExpires();
         $params = array_merge(array(
             'api-key' => $this->apiKey,
             'sig'     => $sig,
