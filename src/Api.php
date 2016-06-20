@@ -46,12 +46,12 @@ class Api
     /**
      * @var string[]
      * */
-    protected $allowedHttpMethods = array(
+    protected $allowedHttpMethods = [
         self::HTTP_METHOD_POST,
         self::HTTP_METHOD_GET,
         self::HTTP_METHOD_PUT,
         self::HTTP_METHOD_DELETE
-    );
+    ];
 
     /**
      * @var Guzzle
@@ -79,7 +79,7 @@ class Api
     {
         $expires = (int) gmdate('U') + self::MAX_EXPIRY;
         $sig = base64_encode(hash_hmac('sha1', $this->apiKey . $expires, $this->apiSecret, true));
-        return array($sig, $expires);
+        return [$sig, $expires];
     }
 
     /**
@@ -89,7 +89,7 @@ class Api
      * @throws \Exception
      * @return bool|mixed
      */
-    public function call($method, $params = array(), $httpMethod = self::HTTP_METHOD_POST)
+    public function call($method, $params = [], $httpMethod = self::HTTP_METHOD_POST)
     {
         if (!in_array($httpMethod, $this->allowedHttpMethods)) {
             throw new \Exception('Invalid HTTP method specified.');
@@ -104,11 +104,14 @@ class Api
             'expires' => $expires
         ), $params);
 
+
+        $guzzleProps = ['form_params' => $params];
+
         if ($httpMethod === self::HTTP_METHOD_GET) {
-            $result = $this->guzzle->get($this->endpoint . $method, array('query' => $params));
-        } else {
-            $result = $this->guzzle->$httpMethod($this->endpoint . $method, array('form_params' => $params));
+            $guzzleProps = ['query' => $params];
         }
+
+        $result = $this->guzzle->$httpMethod($this->endpoint . $method, $guzzleProps);
 
         $this->lastHttpCode = $result->getStatusCode();
         return json_decode($result->getBody(), true);
@@ -119,7 +122,7 @@ class Api
      * @param array $params
      * @return bool|mixed
      */
-    public function get($method, $params = array())
+    public function get($method, $params = [])
     {
         return $this->call($method, $params, self::HTTP_METHOD_GET);
     }
@@ -129,7 +132,7 @@ class Api
      * @param array $params
      * @return bool|mixed
      */
-    public function post($method, $params = array())
+    public function post($method, $params = [])
     {
         return $this->call($method, $params, self::HTTP_METHOD_POST);
     }
@@ -139,7 +142,7 @@ class Api
      * @param array $params
      * @return bool|mixed
      */
-    public function put($method, $params = array())
+    public function put($method, $params = [])
     {
         return $this->call($method, $params, self::HTTP_METHOD_PUT);
     }
@@ -149,7 +152,7 @@ class Api
      * @param array $params
      * @return bool|mixed
      */
-    public function delete($method, $params = array())
+    public function delete($method, $params = [])
     {
         return $this->call($method, $params, self::HTTP_METHOD_DELETE);
     }
