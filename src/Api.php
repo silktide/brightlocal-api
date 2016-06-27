@@ -68,6 +68,17 @@ class Api
     {
         $this->guzzle = $guzzle;
         $this->endpoint = isset($endpoint) ? $endpoint : self::ENDPOINT;
+        $this->setApiCredentials($apiKey, $apiSecret);
+    }
+
+    /**
+     * Set API credentials
+     *
+     * @param string $apiKey
+     * @param string $apiSecret
+     */
+    protected function setApiCredentials($apiKey, $apiSecret)
+    {
         $this->apiKey = $apiKey;
         $this->apiSecret = $apiSecret;
     }
