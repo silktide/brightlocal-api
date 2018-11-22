@@ -2,7 +2,7 @@
 
 namespace Silktide\BrightLocalApi\Test;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Silktide\BrightLocalApi\Api;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Handler\MockHandler;
@@ -17,7 +17,7 @@ use GuzzleHttp\Psr7\Request;
  *
  * @package Silktide\BrightLocalApi\Test
  */
-class ApiTest extends PHPUnit_Framework_TestCase
+class ApiTest extends TestCase
 {
     /**
      * @var string

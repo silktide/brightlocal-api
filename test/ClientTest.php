@@ -2,11 +2,11 @@
 
 namespace Silktide\BrightLocalApi\Test;
 
-use PHPUnit_Framework_TestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use Silktide\BrightLocalApi\Api;
 use Silktide\BrightLocalApi\BatchFactory;
 use Silktide\BrightLocalApi\Client;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class ClientTest
@@ -14,7 +14,7 @@ use Silktide\BrightLocalApi\Client;
  *
  * @package Silktide\BrightLocalApi\Test
  */
-class ClientTest extends PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
 
     /**

@@ -2,8 +2,8 @@
 
 namespace Silktide\BrightLocalApi\Test\Data;
 
-use PHPUnit_Framework_TestCase;
 use Silktide\BrightLocalApi\Data\DataLoader;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class DataLoaderTest
@@ -11,7 +11,7 @@ use Silktide\BrightLocalApi\Data\DataLoader;
  *
  * @package Silktide\BrightLocalApi\Test
  */
-class DataLoaderTest extends PHPUnit_Framework_TestCase
+class DataLoaderTest extends TestCase
 {
 
     /**

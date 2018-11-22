@@ -2,16 +2,15 @@
 
 namespace Silktide\BrightLocalApi\Test\Data;
 
-use PHPUnit_Framework_TestCase;
 use Silktide\BrightLocalApi\Data\DirectoryConfigHelper;
-
+use PHPUnit\Framework\TestCase;
 /**
  * Class DirectoryConfigHelperTest
  * Test the DirectoryConfigHelper
  *
  * @package Silktide\BrightLocalApi\Test
  */
-class DirectoryConfigHelperTest extends PHPUnit_Framework_TestCase
+class DirectoryConfigHelperTest extends TestCase
 {
 
     /**
